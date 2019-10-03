@@ -1,9 +1,10 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
+import Bio from "../components/Bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Sidebar from '../components/Sidebar';
 import { rhythm } from "../utils/typography"
 
 class BlogIndex extends React.Component {
@@ -16,8 +17,10 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
         <Bio />
+        <Sidebar />
         {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
+          console.log(node.fields.slug);
+          const title = node.frontmatter.title || node.fields.slug;
           return (
             <article key={node.fields.slug}>
               <header>
@@ -26,7 +29,9 @@ class BlogIndex extends React.Component {
                     marginBottom: rhythm(1 / 4),
                   }}
                 >
-                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                  <Link style={{ 
+                    boxShadow: `none` 
+                  }} to={node.fields.slug}>
                     {title}
                   </Link>
                 </h3>
