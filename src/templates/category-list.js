@@ -8,18 +8,15 @@ import Sidebar from '../components/Sidebar';
 import { rhythm } from "../utils/typography"
 
 function CategoryListTemplate({location, data, pageContext}) {
-  const { edges } = data.allMarkdownRemark;
-
   return (
     <Layout
       location={location}
       title={pageContext.category}
     >
-    <SEO title="All posts" />
+    <SEO title={pageContext.category} />
     <Bio />
     <Sidebar />
     {edges.map(({ node }) => {
-      console.log(node.fields.slug);
       const title = node.frontmatter.title;
 
       return (

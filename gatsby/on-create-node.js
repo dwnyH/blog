@@ -5,7 +5,6 @@ const createNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
-    console.log('카테고리', node);
     const value = createFilePath({ node, getNode });
 
     createNodeField({
@@ -15,7 +14,6 @@ const createNode = ({ node, actions, getNode }) => {
     }); 
 
     if (node.frontmatter.category) {
-      console.log(node.frontmatter.category, '카테고리');
       createNodeField({ 
         node, 
         name: 'categorySlug', 
