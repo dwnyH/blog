@@ -1,0 +1,13 @@
+nav {
+  display: flex;
+  align-items: flex-end;
+  
+  ul {
+    display: flex;
+    width: 100%;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 0;
+  }
+}

@@ -2,9 +2,9 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/Bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Sidebar from '../components/Sidebar';
+import Layout from "../components/Layout/Layout"
+import SEO from "../components/Seo"
+import Sidebar from '../components/NavMenu';
 import { rhythm } from "../utils/typography"
 
 class BlogIndex extends React.Component {
@@ -17,7 +17,7 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={siteTitle} />
         <Bio />
-        <Sidebar />
+        {/* <Sidebar /> */}
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
           return (

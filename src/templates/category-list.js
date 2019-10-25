@@ -2,12 +2,14 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 
 import Bio from "../components/Bio";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import Sidebar from '../components/Sidebar';
+import Layout from "../components/Layout/Layout";
+import SEO from "../components/Seo";
+import Sidebar from '../components/NavMenu';
 import { rhythm } from "../utils/typography"
 
 function CategoryListTemplate({location, data, pageContext}) {
+  const { edges } = data.allMarkdownRemark;
+
   return (
     <Layout
       location={location}
@@ -15,10 +17,9 @@ function CategoryListTemplate({location, data, pageContext}) {
     >
     <SEO title={pageContext.category} />
     <Bio />
-    <Sidebar />
+    {/* <Sidebar /> */}
     {edges.map(({ node }) => {
       const title = node.frontmatter.title;
-
       return (
         <article key={node.fields.slug}>
           <header>

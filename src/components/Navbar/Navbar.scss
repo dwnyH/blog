@@ -1,0 +1,11 @@
+.header {
+  padding-top: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+
+  .header-title {
+    color: black;
+    font-size: 3rem;
+  }
+}
