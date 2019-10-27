@@ -1,7 +1,19 @@
 .layout {
-  max-width: 1220px;
+  padding-top: 5rem;
+  max-width: 100rem;
   margin-left: 4rem;
   margin-right: 4rem;
+  margin: 0 auto;
+
+  main {
+    margin-top: 15rem;
+  }
+
+  footer {
+    margin-top: 10rem;
+    margin-bottom: 4rem;
+    font-size: 1.3rem;
+  }
 }
 .header-title {
   font-size: 100;

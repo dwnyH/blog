@@ -5,20 +5,22 @@ import NavMenu from '../NavMenu/NavMenu';
 
 function Navbar() {
   return (
-    <div className="header">
-      <header className="header-title">
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            // color: `inherit`,
-          }}
-          to={`/`}
-        >
-          Dwny Blog
-        </Link>
-      </header>
-      <NavMenu />
+    <div className="headerWrapper">
+      <div className="header">
+        <header className="header-title">
+          <Link
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`,
+              // color: `inherit`,
+            }}
+            to={`/`}
+          >
+            Dwny Blog
+          </Link>
+        </header>
+        <NavMenu />
+      </div>
     </div>
   );
 }

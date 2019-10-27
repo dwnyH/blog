@@ -1,10 +1,10 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-
-import Bio from "../components/Bio"
-import Layout from "../components/Layout/Layout"
-import SEO from "../components/Seo"
-import { rhythm, scale } from "../utils/typography"
+import { Link, graphql } from "gatsby";
+import Bio from "../../components/Bio/Bio";
+import Layout from "../../components/Layout/Layout";
+import SEO from "../../components/Seo";
+import './BlogPostTemplate.scss';
+import { rhythm, scale } from "../../utils/typography"
 
 function BlogPostTemplate({data, pageContext, location}) {
   const post = data.markdownRemark;
@@ -19,21 +19,10 @@ function BlogPostTemplate({data, pageContext, location}) {
       />
       <article>
         <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-            }}
-          >
+          <h1>
             {post.frontmatter.title}
           </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
+          <p>
             {post.frontmatter.date}
           </p>
         </header>

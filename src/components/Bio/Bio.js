@@ -6,29 +6,17 @@
  */
 
 import React from "react"
-import { useSiteMetadata } from '../hooks';
-import { rhythm } from "../utils/typography"
+import { useSiteMetadata } from '../../hooks';
+import "./Bio.scss";
 
 const Bio = () => {
   const { author } = useSiteMetadata();
 
   return (
-    <div
-      style={{
-        display: `flex`,
-        marginBottom: rhythm(2.5),
-      }}
-    >
+    <div className="bio">
       <img
         src={author.photo}
         alt={author.name}
-        style={{
-          marginRight: rhythm(1 / 2),
-          marginBottom: 0,
-          maxWidth: 50,
-          borderRadius: '50%',
-          objectFit: 'cover',
-        }}
       />
       <p>
         Written by <strong>{author.name}</strong>

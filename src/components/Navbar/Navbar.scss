@@ -1,11 +1,23 @@
-.header {
-  padding-top: 5rem;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+.headerWrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding-left: 20rem;
+  padding-right: 20rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background-color: white;
 
-
-  .header-title {
-    color: black;
-    font-size: 3rem;
+  .header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  
+  
+    .header-title {
+      color: black;
+      font-size: 3rem;
+    }
   }
 }
