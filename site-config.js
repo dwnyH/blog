@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Hello Dev',
+  title: 'Dwny Blog',
   subtitle: '',
   description: 'A blog written by dwny',
   siteUrl: 'https://gatsby-starter-blog-demo.netlify.com/',
@@ -25,7 +25,7 @@ module.exports = {
     },
     {
       label: 'About Me',
-      path: '/about'
+      path: '/aboutMe'
     }
   ],
   author: {

@@ -1,9 +1,9 @@
 {
-  "name": "hello-dev",
+  "name": "dwny-blog",
   "private": true,
-  "description": "",
+  "description": "개발하면서 알게된 것들을 차곡차곡 적어봅니다",
   "version": "0.1.0",
-  "author": "Dawoon Hwang <dawoonHwang316@gmail.com>",
+  "author": "Dawoon Hwang <dawoonh316@gmail.com>",
   "dependencies": {
     "core-util-is": "^1.0.2",
     "gatsby": "^2.15.11",

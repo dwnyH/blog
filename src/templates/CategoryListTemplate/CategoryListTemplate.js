@@ -4,7 +4,6 @@ import { Link, graphql } from "gatsby";
 import Bio from "../../components/Bio/Bio";
 import Layout from "../../components/Layout/Layout";
 import SEO from "../../components/Seo";
-import { rhythm } from "../../utils/typography";
 import "./CategoryListTemplate.scss";
 
 function CategoryListTemplate({
@@ -13,16 +12,15 @@ function CategoryListTemplate({
   pageContext,
   title
 }) {
-  const isCategoryPage = Boolean(pageContext);
   const { edges } = data.allMarkdownRemark;
 
   return (
     <Layout
       location={location}
-      title={isCategoryPage ? pageContext.category : title}
+      title={pageContext ? pageContext.category : title}
     >
-    <SEO title={isCategoryPage ? pageContext.category : title} />
-    {!isCategoryPage && <Bio />}
+    <SEO title={pageContext ? pageContext.category : title} />
+    {title && <Bio />}
     {edges.map(({ node }) => {
       const title = node.frontmatter.title;
       return (

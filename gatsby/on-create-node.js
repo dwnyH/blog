@@ -3,21 +3,24 @@ const createNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode });
+    const path = createFilePath({ node, getNode });
+    let value = path;
 
-    createNodeField({
-      node,
-      name: 'slug',
-      value: `/posts${value}`,
-    }); 
+    if (node.frontmatter.category && node.frontmatter.template === 'posts') {
+      value = `posts${path}`
 
-    if (node.frontmatter.category) {
       createNodeField({ 
         node, 
         name: 'categorySlug', 
         value: `/category/${node.frontmatter.category}/`,
       });
-    }
+    } 
+
+    createNodeField({
+      node,
+      name: 'slug',
+      value,
+    }); 
   }
 };
 

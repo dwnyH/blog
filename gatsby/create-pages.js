@@ -5,6 +5,7 @@ const createPages = async ({ graphql, actions }) => {
 
   const blogPostTemplate = path.resolve('./src/templates/BlogPostTemplate/BlogPostTemplate.js');
   const categoryListTemplate = path.resolve('./src/templates/CategoryListTemplate/CategoryListTemplate.js');
+  const pageTemplate = path.resolve('./src/templates/PageTemplate/PageTemplate.js');
   const result = await graphql(
     `
       {
@@ -17,6 +18,7 @@ const createPages = async ({ graphql, actions }) => {
               frontmatter {
                 category
                 title
+                template
               }
               fields {
                 slug
@@ -41,16 +43,23 @@ const createPages = async ({ graphql, actions }) => {
   edges.forEach((edge, index) => {
     const previous = index === edges.length - 1 ? null : edges[index + 1].node;
     const next = index === 0 ? null : edges[index - 1].node;
+    let template = blogPostTemplate;
 
+    if (edge.node.frontmatter.template === 'pages') {
+      template = pageTemplate;
+    }
+
+    console.log(edge.node)
+    
     createPage({
       path: edge.node.fields.slug,
-      component: blogPostTemplate,
+      component: template,
       context: { 
         slug: edge.node.fields.slug,
         previous,
         next, 
-      }
-    });
+      },
+    });  
   });
 
   group.forEach((category) => {
