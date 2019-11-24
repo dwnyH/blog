@@ -33,7 +33,7 @@ const animationDuration = response.settings.animationDuration || 300;
 const showSplashScreen = response.settings.showSplashScreen || true; 
 ```
 
-OR 연산자의 좌측 값이 null 또는 undefined임을 가정하며 위와 같은 구문들을 작성하지만, 좌측의 값이 Boolean타입으로 변환된 후 측정되기 때문에 값이 `'', 0, false` 와 같이 의도된 값이라도 falsy로 판단되는 경우가 있다. 이와 같은 예기치 못한 상황을 막기 위해 고안된 것이 `Nullish coalescing operator`인 것이다.
+OR 연산자의 좌측 값이 null 또는 undefined임을 가정하며 위와 같은 구문들을 작성하지만, 좌측의 값이 Boolean타입으로 변환된 후 측정되기 때문에 의도된 값이 `'', 0, false` 와 같이 falsy일 경우에 해당 값이 나오지 않고 연산자 뒤의 값이 리턴될 수가 있다. 이와 같은 예기치 못한 상황을 막기 위해 고안된 것이 `Nullish coalescing operator`인 것이다.
 
 ```javascript
 const headerText = response.settings.headerText ?? 'Hello, world!';
