@@ -5,7 +5,7 @@ module.exports = {
     title: siteConfig.title,
     author: siteConfig.author,
     description: siteConfig.description,
-    siteUrl: siteConfig.siteMetadata,
+    siteUrl: siteConfig.siteUrl,
     menu: siteConfig.menu,
   },
   plugins: [

@@ -4,12 +4,19 @@ import Bio from "../../components/Bio/Bio";
 import Layout from "../../components/Layout/Layout";
 import SEO from "../../components/Seo";
 import './BlogPostTemplate.scss';
-import { rhythm, scale } from "../../utils/typography"
+import { rhythm, scale } from "../../utils/typography";
+import { DiscussionEmbed } from "disqus-react";
 
 function BlogPostTemplate({data, pageContext, location}) {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
+  const disqusShortname = "yourdisqusshortname";
+  const disqusConfig = {
+    identifier: post.id,
+    title: post.frontmatter.title,
+    url: 'https://vscode.todaywelearned.dev',
+  };
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -62,6 +69,7 @@ function BlogPostTemplate({data, pageContext, location}) {
           </li>
         </ul>
       </nav> 
+      <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
     </Layout>
   );
 }
