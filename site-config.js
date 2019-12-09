@@ -2,8 +2,8 @@ module.exports = {
   title: 'Dwny Blog',
   subtitle: '',
   description: 'A blog written by dwny',
-  siteUrl: 'https://gatsby-starter-blog-demo.netlify.com/',
-  url: 'https://lumen.netlify.com',
+  siteUrl: 'https://http://downy.github.io/',
+  url: 'https://downy.github.io/',
   pathPrefix: '/',
   // googleAnalyticsId: 'UA-73379983-2',
   menu: [

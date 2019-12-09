@@ -6,6 +6,7 @@
   "author": "Dawoon Hwang <dawoonh316@gmail.com>",
   "dependencies": {
     "core-util-is": "^1.0.2",
+    "disqus-react": "^1.0.7",
     "gatsby": "^2.15.11",
     "gatsby-image": "^2.2.17",
     "gatsby-plugin-feed": "^2.3.11",
@@ -37,6 +38,7 @@
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "devDependencies": {
+    "gh-pages": "^2.1.1",
     "prettier": "^1.18.2"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
@@ -56,6 +58,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \"",
-    "clean": "rm -rf .cache"
+    "clean": "rm -rf .cache",
+    "deploy": "gatsby build && gh-pages -d public -b master"
   }
 }

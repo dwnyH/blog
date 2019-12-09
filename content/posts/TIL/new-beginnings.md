@@ -1,9 +1,9 @@
 ---
 title: 문자열에 빌려쓸 수 있는/없는 배열 메서드
-date: "October 29, 2019"
+date: "2019-10-29"
 template: "posts"
 category: "TIL"
-description: "You don't know JS"책을 지희와 논의하면서 알게된 사실
+description: "'You don't know JS'책을 지희와 논의하면서 알게된 사실"
 ---
 
 **You don't know JS책**의 **Chapter 2 값**에 이런 내용이 있다.

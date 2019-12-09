@@ -5,7 +5,7 @@ module.exports = {
     title: siteConfig.title,
     author: siteConfig.author,
     description: siteConfig.description,
-    siteUrl: siteConfig.siteMetadata,
+    siteUrl: siteConfig.siteUrl,
     menu: siteConfig.menu,
   },
   plugins: [
@@ -100,7 +100,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `public/assets/dwny-profile.png`,
+        icon: `assets/dwny-profile.png`,
       },
     },
     {
