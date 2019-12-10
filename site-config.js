@@ -2,8 +2,8 @@ module.exports = {
   title: 'Dwny Blog',
   subtitle: '',
   description: 'A blog written by dwny',
-  siteUrl: 'https://http://downy.github.io/',
-  url: 'https://downy.github.io/',
+  siteUrl: 'https://dwnyh.github.io/',
+  url: 'https://dwnyh.github.io/',
   pathPrefix: '/',
   // googleAnalyticsId: 'UA-73379983-2',
   menu: [
@@ -30,7 +30,6 @@ module.exports = {
   ],
   author: {
     name: 'Dawoon Hwang',
-    photo: '/assets/dwny-profile.png',
     // bio: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
     // contacts: {
     //   email: '',

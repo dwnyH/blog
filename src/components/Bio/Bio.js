@@ -8,6 +8,7 @@
 import React from "react"
 import { useSiteMetadata } from '../../hooks';
 import "./Bio.scss";
+import profilePhoto from "../../../assets/dwny-profile.png";
 
 const Bio = () => {
   const { author } = useSiteMetadata();
@@ -15,7 +16,7 @@ const Bio = () => {
   return (
     <div className="bio">
       <img
-        src={author.photo}
+        src={profilePhoto}
         alt={author.name}
       />
       <p>

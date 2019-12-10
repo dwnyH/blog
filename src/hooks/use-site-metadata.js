@@ -10,7 +10,6 @@ const useSiteMetadata = () => {
             description
             author {
               name
-              photo
             }
             menu {
               label

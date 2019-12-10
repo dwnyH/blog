@@ -5,21 +5,20 @@ import Layout from "../../components/Layout/Layout";
 import SEO from "../../components/Seo";
 import './BlogPostTemplate.scss';
 import { rhythm, scale } from "../../utils/typography";
-import { DiscussionEmbed } from "disqus-react";
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
 
 function BlogPostTemplate({data, pageContext, location}) {
   const post = data.markdownRemark;
-  const siteTitle = data.site.siteMetadata.title;
-  const { previous, next } = pageContext;
-  const disqusShortname = "yourdisqusshortname";
+  const { title, siteUrl } = data.site.siteMetadata;
+  const { previous, next, slug } = pageContext;
   const disqusConfig = {
     identifier: post.id,
     title: post.frontmatter.title,
-    url: 'https://vscode.todaywelearned.dev',
+    url: `${siteUrl}${slug}`,
   };
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title={title}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -69,7 +68,8 @@ function BlogPostTemplate({data, pageContext, location}) {
           </li>
         </ul>
       </nav> 
-      <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+      <CommentCount config={disqusConfig} placeholder={'...'} />
+      <Disqus config={disqusConfig} />
     </Layout>
   );
 }
@@ -80,6 +80,7 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
+        siteUrl
         title
         author {
           name
