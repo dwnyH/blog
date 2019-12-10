@@ -6,9 +6,9 @@
   "author": "Dawoon Hwang <dawoonh316@gmail.com>",
   "dependencies": {
     "core-util-is": "^1.0.2",
-    "disqus-react": "^1.0.7",
     "gatsby": "^2.15.11",
     "gatsby-image": "^2.2.17",
+    "gatsby-plugin-disqus": "^1.1.4",
     "gatsby-plugin-feed": "^2.3.11",
     "gatsby-plugin-google-analytics": "^2.1.15",
     "gatsby-plugin-manifest": "^2.2.15",
