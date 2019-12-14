@@ -1,23 +1,46 @@
+@import '../../scss/mixin';
+
 .headerWrapper {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
-  padding-left: 20rem;
-  padding-right: 20rem;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   background-color: white;
 
+  @include sm {
+    .header {
+      grid-template-columns: 1.5fr 3.5fr;
+      margin: 2rem;
+    }
+
+
+    .header-title {
+      font-size: 1.7rem;
+    }
+  }
+
+  @include xl {
+    .header {
+      grid-template-columns: 1fr 2fr;
+      margin-left: 15rem;
+      margin-right: 15rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .header-title {
+      font-size: 3rem;
+    }
+  }
+
   .header {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-  
+    justify-content: center;
+    align-items: center;
   
     .header-title {
       color: black;
-      font-size: 3rem;
     }
   }
 }

@@ -1,15 +1,29 @@
+@import '../../scss/mixin';
+
 nav {
   display: flex;
   align-items: flex-end;
+
+  @include sm {
+    ul {
+      font-size: 1rem;
+    }
+  }
   
+  @include xl {
+    ul {
+      font-size: 1.4rem;
+    }
+  }
+
   ul {
     display: flex;
     width: 100%;
-    font-size: 1.4rem;
     grid-auto-flow: column;
     align-items: center;
     justify-content: space-around;
     margin-bottom: 0;
+    padding: 0;
 
     a {
       box-shadow: none;

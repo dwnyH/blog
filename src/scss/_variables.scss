@@ -1,2 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap);
+
 //Colors
 $color-gray-description: #73737d;
+
+//Font
+$korean-main-font: 'Nanum Gothic';
+
+//BreakPoints
+  // smartphones (landscape view)
+$screen-sm-min: 375px;
+
+  // Tablets and small desktops
+$screen-lg-min: 992px;
+
+  // Large tablets and desktops
+$screen-xl-min: 1200px;
+
+

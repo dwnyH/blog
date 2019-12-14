@@ -32,11 +32,7 @@ function BlogPostTemplate({data, pageContext, location}) {
           </p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            // marginBottom: rhythm(1),
-          }}
-        />
+        <hr/>
         <footer>
           <Bio />
         </footer>

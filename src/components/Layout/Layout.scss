@@ -1,3 +1,5 @@
+@import '../../scss/mixin';
+
 .layout {
   padding-top: 5rem;
   max-width: 100rem;
@@ -5,19 +7,27 @@
   margin-right: 4rem;
   margin: 0 auto;
 
-  main {
-    margin-top: 15rem;
+  @include sm {
+    main {
+      margin-top: 1rem;
+    }
+
+    footer {
+      margin-top: 5rem;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
   }
 
-  footer {
-    margin-top: 10rem;
-    margin-bottom: 4rem;
-    font-size: 1.3rem;
+  @include xl {
+    main {
+      margin-top: 7rem;
+    }
+
+    footer {
+      margin-top: 10rem;
+      margin-bottom: 4rem;
+      font-size: 1.3rem;
+    }
   }
-}
-.header-title {
-  font-size: 100;
-  margin-bottom: 50;
-  margin-top: 0;
-  color: red;
 }
