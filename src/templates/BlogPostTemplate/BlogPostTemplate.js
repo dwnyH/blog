@@ -4,7 +4,6 @@ import Bio from "../../components/Bio/Bio";
 import Layout from "../../components/Layout/Layout";
 import SEO from "../../components/Seo";
 import './BlogPostTemplate.scss';
-import { rhythm, scale } from "../../utils/typography";
 import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
 
 function BlogPostTemplate({data, pageContext, location}) {
@@ -35,7 +34,7 @@ function BlogPostTemplate({data, pageContext, location}) {
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
-            marginBottom: rhythm(1),
+            // marginBottom: rhythm(1),
           }}
         />
         <footer>
