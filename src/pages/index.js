@@ -1,9 +1,5 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
-import Bio from "../components/Bio/Bio"
-import Layout from "../components/Layout/Layout"
-import SEO from "../components/Seo"
 import CategoryListTemplate from "../templates/CategoryListTemplate/CategoryListTemplate";
 
 function BlogIndex(props) {

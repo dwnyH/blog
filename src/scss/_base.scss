@@ -12,17 +12,26 @@ html {
   }
 
   @include xl {
-    padding: 0 150px;
+    padding: 0 350px;
     font-size: 12px;
   }
 }
 
-a:link, a:visited, a:active {
-  text-decoration: none;
+a:link,
+a:visited,
+a:active {
+  text-decoration: underline;
   color: black;
+  font-weight: 600;
   cursor: pointer;
 }
 
 ul {
   list-style: none;
+}
+
+p {
+  line-height: 2;
+  letter-spacing: 0.8;
+  font-size: 1.5rem;
 }

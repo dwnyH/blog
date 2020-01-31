@@ -1,20 +1,20 @@
 import React from "react"
-import { Link, graphql } from "gatsby";
-import Bio from "../../components/Bio/Bio";
-import Layout from "../../components/Layout/Layout";
-import SEO from "../../components/Seo";
-import './BlogPostTemplate.scss';
-import { Disqus, CommentCount } from 'gatsby-plugin-disqus';
+import { Link, graphql } from "gatsby"
+import Bio from "../../components/Bio/Bio"
+import Layout from "../../components/Layout/Layout"
+import SEO from "../../components/Seo"
+import "./BlogPostTemplate.scss"
+import { Disqus, CommentCount } from "gatsby-plugin-disqus"
 
-function BlogPostTemplate({data, pageContext, location}) {
-  const post = data.markdownRemark;
-  const { title, siteUrl } = data.site.siteMetadata;
-  const { previous, next, slug } = pageContext;
+function BlogPostTemplate({ data, pageContext, location }) {
+  const post = data.markdownRemark
+  const { title, siteUrl } = data.site.siteMetadata
+  const { previous, next, slug } = pageContext
   const disqusConfig = {
     identifier: post.id,
     title: post.frontmatter.title,
     url: `${siteUrl}${slug}`,
-  };
+  }
 
   return (
     <Layout location={location} title={title}>
@@ -24,15 +24,11 @@ function BlogPostTemplate({data, pageContext, location}) {
       />
       <article>
         <header>
-          <h1>
-            {post.frontmatter.title}
-          </h1>
-          <p>
-            {post.frontmatter.date}
-          </p>
+          <h1>{post.frontmatter.title}</h1>
+          <p>{post.frontmatter.date}</p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr/>
+        <hr />
         <footer>
           <Bio />
         </footer>
@@ -45,6 +41,8 @@ function BlogPostTemplate({data, pageContext, location}) {
             justifyContent: `space-between`,
             listStyle: `none`,
             padding: 0,
+            marginTop: 20,
+            marginBottom: 50,
           }}
         >
           <li>
@@ -62,14 +60,14 @@ function BlogPostTemplate({data, pageContext, location}) {
             )}
           </li>
         </ul>
-      </nav> 
-      <CommentCount config={disqusConfig} placeholder={'...'} />
+      </nav>
+      <CommentCount config={disqusConfig} placeholder={"..."} />
       <Disqus config={disqusConfig} />
     </Layout>
-  );
+  )
 }
 
-export default BlogPostTemplate;
+export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
