@@ -1,11 +1,17 @@
-const path = require(`path`);
+const path = require(`path`)
 
 const createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const blogPostTemplate = path.resolve('./src/templates/BlogPostTemplate/BlogPostTemplate.js');
-  const categoryListTemplate = path.resolve('./src/templates/CategoryListTemplate/CategoryListTemplate.js');
-  const pageTemplate = path.resolve('./src/templates/PageTemplate/PageTemplate.js');
+  const blogPostTemplate = path.resolve(
+    "./src/templates/BlogPostTemplate/BlogPostTemplate.js"
+  )
+  const categoryListTemplate = path.resolve(
+    "./src/templates/CategoryListTemplate/CategoryListTemplate.js"
+  )
+  const pageTemplate = path.resolve(
+    "./src/templates/PageTemplate/PageTemplate.js"
+  )
   const result = await graphql(
     `
       {
@@ -38,39 +44,37 @@ const createPages = async ({ graphql, actions }) => {
   }
 
   // Create blog posts pages.
-  const { edges, group } = result.data.allMarkdownRemark;
+  const { edges, group } = result.data.allMarkdownRemark
 
   edges.forEach((edge, index) => {
-    const previous = index === edges.length - 1 ? null : edges[index + 1].node;
-    const next = index === 0 ? null : edges[index - 1].node;
-    let template = blogPostTemplate;
+    const previous = index === edges.length - 1 ? null : edges[index + 1].node
+    const next = index === 0 ? null : edges[index - 1].node
+    let template = blogPostTemplate
 
-    if (edge.node.frontmatter.template === 'pages') {
-      template = pageTemplate;
+    if (edge.node.frontmatter.template === "pages") {
+      template = pageTemplate
     }
-
-    console.log(edge.node)
-    
+    console.log(edge.node.fields.slug)
     createPage({
       path: edge.node.fields.slug,
       component: template,
-      context: { 
+      context: {
         slug: edge.node.fields.slug,
         previous,
-        next, 
+        next,
       },
-    });  
-  });
+    })
+  })
 
-  group.forEach((category) => {
+  group.forEach(category => {
     createPage({
       path: `/category/${category.fieldValue}`,
       component: categoryListTemplate,
-      context: { 
+      context: {
         category: category.fieldValue,
-      }
-    });
-  });
-};
+      },
+    })
+  })
+}
 
-module.exports = createPages;
+module.exports = createPages

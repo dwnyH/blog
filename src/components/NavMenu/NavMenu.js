@@ -1,26 +1,22 @@
-import React from 'react';
-import { useSiteMetadata } from '../../hooks';
-import { Link } from 'gatsby';
-import "./NavMenu.scss";
+import React from "react"
+import { useSiteMetadata } from "../../hooks"
+import { Link } from "gatsby"
+import "./NavMenu.scss"
 
 const NavMenu = () => {
-  const { menu } = useSiteMetadata();
+  const { menu } = useSiteMetadata()
 
   return (
     <nav>
       <ul>
-        {menu.map((item) => (
+        {menu.map(item => (
           <li key={item.path}>
-            <Link
-              to={item.path}
-            >
-              {item.label}
-            </Link>
+            <Link to={item.path}>{item.label}</Link>
           </li>
         ))}
       </ul>
     </nav>
-  );
-};
+  )
+}
 
-export default NavMenu;
+export default NavMenu

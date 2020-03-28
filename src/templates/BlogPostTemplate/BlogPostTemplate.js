@@ -13,57 +13,59 @@ function BlogPostTemplate({ data, pageContext, location }) {
   const disqusConfig = {
     identifier: post.id,
     title: post.frontmatter.title,
-    url: `${siteUrl}${slug}`,
+    url: `${siteUrl}/${slug}`,
   }
 
   return (
-    <Layout location={location} title={title}>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
-      <article>
-        <header>
-          <h1>{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
-        </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
-        <footer>
-          <Bio />
-        </footer>
-      </article>
-      <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-            marginTop: 20,
-            marginBottom: 50,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
-      <CommentCount config={disqusConfig} placeholder={"..."} />
-      <Disqus config={disqusConfig} />
-    </Layout>
+    <div className="blogPost">
+      <Layout location={location} title={title}>
+        <SEO
+          title={post.frontmatter.title}
+          description={post.frontmatter.description || post.excerpt}
+        />
+        <article>
+          <header>
+            <h1>{post.frontmatter.title}</h1>
+            <p>{post.frontmatter.date}</p>
+          </header>
+          <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          <hr />
+          <footer>
+            <Bio />
+          </footer>
+        </article>
+        <nav>
+          <ul
+            style={{
+              display: `flex`,
+              flexWrap: `wrap`,
+              justifyContent: `space-between`,
+              listStyle: `none`,
+              padding: 0,
+              marginTop: "3rem",
+              marginBottom: "10rem",
+            }}
+          >
+            <li>
+              {previous && (
+                <Link to={`/${previous.fields.slug}`} rel="prev">
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
+            <li>
+              {next && (
+                <Link to={`/${next.fields.slug}`} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </li>
+          </ul>
+        </nav>
+        <CommentCount config={disqusConfig} placeholder={"..."} />
+        <Disqus config={disqusConfig} />
+      </Layout>
+    </div>
   )
 }
 

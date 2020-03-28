@@ -1,19 +1,27 @@
 @import "../../scss/variables";
 
-article {
-  header {
-    h1 {
-      font-size: 2rem;
+.blogPost {
+  article {
+    header {
+      padding: 4rem 0;
+
+      h1 {
+        font-size: 2rem;
+      }
+      h3 {
+        margin-top: 4rem;
+        font-size: 2rem;
+      }
+      small {
+        font-size: 1rem;
+      }
     }
-    h3 {
-      margin-top: 4rem;
-      font-size: 2rem;
+    section {
+      color: $color-gray-description;
     }
-    small {
-      font-size: 1rem;
+
+    a {
+      text-decoration: active;
     }
-  }
-  section {
-    color: $color-gray-description;
   }
 }
